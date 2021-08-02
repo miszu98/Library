@@ -18,6 +18,7 @@ public class UserMapper {
 
     public static User entityToDto(UserEntity userEntity) {
         return new User(
+                userEntity.getId(),
                 userEntity.getEmail(),
                 userEntity.getPassword(),
                 userEntity.getFirstName(),
@@ -27,8 +28,9 @@ public class UserMapper {
 
     public static List<User> entitiesToDto(List<UserEntity> userEntities) {
         return userEntities.stream().map(userEntity -> new User(
+                userEntity.getId(),
                 userEntity.getEmail(),
-                "*********",
+                "password",
                 userEntity.getFirstName(),
                 userEntity.getLastName()
         )).collect(Collectors.toList());
