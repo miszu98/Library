@@ -1,0 +1,13 @@
+
+-- delete from users;
+-- delete from roles;
+-- delete from books;
+-- delete from authors;
+-- delete from book_types;
+--
+-- insert into roles values (1, 'USER'), (2, 'ADMIN');
+-- insert into book_types values (1, 'drama');
+--
+-- insert into users(id, email, password, first_name, last_name, date_joined, is_active, role_id)
+-- values (1, 'admin@admin.com', '$2y$12$tKa20vaESQO.iNR9FSOQ2O5oXP2sad3CZeDnFRdcQnsLaO40silxO', 'admin', 'admin', '2021-07-16', true, 2);
+--
