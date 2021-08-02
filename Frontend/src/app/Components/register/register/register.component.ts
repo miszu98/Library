@@ -39,10 +39,12 @@ export class RegisterComponent implements OnInit {
 
   public register(registerForm: FormGroup) {
     this.registerService.register({
+      id: 0,
       email: registerForm.get('email')?.value,
       password: registerForm.get('password1')?.value,
       firstName: registerForm.get('firstName')?.value,
-      lastName: registerForm.get('lastName')?.value
+      lastName: registerForm.get('lastName')?.value,
+      role: null
     }).subscribe(
       value => {
         window.location.reload();

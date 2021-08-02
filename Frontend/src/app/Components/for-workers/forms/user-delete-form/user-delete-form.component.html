@@ -1,0 +1,13 @@
+<h1>Delete User</h1>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Select user</mat-label>
+    <mat-select [(value)]="selectedUser">
+      <mat-option *ngFor="let user of users" [value]="user">
+        {{user.firstName}} {{ user.lastName }}</mat-option>
+    </mat-select>
+
+  </mat-form-field>
+</p>
+<button mat-raised-button (click)="deleteUser(selectedUser?.id)">DELETE</button>
+

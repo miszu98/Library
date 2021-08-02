@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserAddFormComponent } from './forms/user-add-form/user-add-form/user-add-form.component';
+import {UserDeleteFormComponent} from "./forms/user-delete-form/user-delete-form.component";
 
 @Component({
   selector: 'app-for-workers',
@@ -9,16 +10,19 @@ import { UserAddFormComponent } from './forms/user-add-form/user-add-form/user-a
 })
 export class ForWorkersComponent implements OnInit {
 
+
   constructor(private dialog: MatDialog) { }
 
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public openAddUserForm() {
     const dialogRef = this.dialog.open(UserAddFormComponent);
   }
 
+  public openDeleteUserForm() {
+    const dialogRef = this.dialog.open(UserDeleteFormComponent);
+  }
 
 
 }

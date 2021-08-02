@@ -38,6 +38,7 @@ import { authInterceptorsProviders } from './Interceptors/AuhtInterceptor/auth.i
 import { RegisterComponent } from './Components/register/register/register.component';
 import { UserAddFormComponent } from './Components/for-workers/forms/user-add-form/user-add-form/user-add-form.component';
 import { BookDescComponent } from './Components/books/forms/bookDescription/book-desc/book-desc.component';
+import { UserDeleteFormComponent } from './Components/for-workers/forms/user-delete-form/user-delete-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { BookDescComponent } from './Components/books/forms/bookDescription/book
     MainComponent,
     RegisterComponent,
     UserAddFormComponent,
-    BookDescComponent
+    BookDescComponent,
+    UserDeleteFormComponent
   ],
   imports: [
     BrowserModule,
