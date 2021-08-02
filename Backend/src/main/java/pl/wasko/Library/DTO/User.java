@@ -15,6 +15,8 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+    private Long id;
+
     @Email(message = "Not valid format of email")
     @NotNull(message = "Email cannot be null")
     private String email;
