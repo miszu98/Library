@@ -1,0 +1,29 @@
+.block {
+    margin-top: 25px;
+    background-color: rgb(0, 0, 0, 0.6);
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border-radius: 3%;
+}
+
+
+
+.mat-raised-button {
+    /* margin-right: 50px; */
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    color: brown;
+    width: 80%;
+    height: 80%;
+}
+
+.mat-icon {
+    font-size: 250%;
+}
+
+
+
+

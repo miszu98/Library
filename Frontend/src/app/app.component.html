@@ -1,0 +1,17 @@
+
+<p>
+  <mat-toolbar class="navbar">
+    <div>
+      <a routerLink="main" routerLinkActive="active"><span>Library</span></a>
+    </div>
+    <div>
+      <a routerLink="authors" routerLinkActive="active"><span>Authors</span></a>
+      <a routerLink="books" routerLinkActive="active"><span>Books</span></a>
+      <a routerLink="for-workers" *ngIf="getRole() == 'ADMIN'" routerLinkActive="active"><span>For workers</span></a>
+      <a *ngIf="isLogged() == 'true'" (click)="logout()" routerLink="main"><span>Logout</span></a>
+
+    </div>
+
+  </mat-toolbar>
+</p>
+<router-outlet></router-outlet>

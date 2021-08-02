@@ -1,0 +1,43 @@
+.mat-raised-button {
+    float: left;
+    /* margin-right: 50px; */
+    margin-top: 35px;
+    margin-left: 50px;
+    color: brown;
+    width: 100px;
+}
+
+.block {
+    margin-top: 25px;
+    background-color: rgb(0, 0, 0, 0.6);
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border-radius: 5%;
+}
+
+h1 {
+    margin-top: 50px;
+    color: white;
+    margin-left: 50px;
+}
+
+.mat-card {
+    width: 20%;
+    height: 20%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.mat-card-subtitle {
+    color: brown;
+}
+.mat-card-image {
+
+    padding: 5%;
+}
+
+.mat-card-header {
+    margin-left: -5%;
+}

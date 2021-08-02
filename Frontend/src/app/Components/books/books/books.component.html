@@ -1,0 +1,33 @@
+
+
+<div class="block">
+
+    <div class="row">
+        <button mat-raised-button>SORT</button>
+        <button mat-raised-button (click)="openUpdateBookForm()">UPDATE</button>
+        <button mat-raised-button *ngIf="isLogged() == 'true' && getRole() == 'ADMIN'" (click)="openDeleteBookForm()">DELETE</button>
+        <button mat-raised-button (click)="openAddBookForm()">ADD</button>
+    </div>
+
+    <div class="row">
+            <mat-card *ngFor="let book of books" class="example-card">
+                <mat-card-header>
+                    <mat-card-title>{{ book.title }}</mat-card-title>
+                    <mat-card-subtitle>{{ book.author.firstName }} {{ book.author.lastName }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                    {{ book.description }}
+                    </p>
+                    <img mat-card-image src="{{ book.imageUrl }}" alt="Here should be book cover :/">
+
+                </mat-card-content>
+          
+                <mat-card-actions>
+                    <button mat-button>More</button>
+                    
+                </mat-card-actions>
+            </mat-card>
+    </div>
+    
+</div>

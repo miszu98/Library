@@ -1,0 +1,88 @@
+
+<h1>New Book</h1>
+<div>
+  <div class="row">
+    <div class="col">
+      <hr>
+      <h2>Author</h2>
+      <p>
+          <mat-form-field appearance="fill">
+              <mat-label>Choose author</mat-label>
+              <mat-select [(value)]="selectedAuthor">
+                <mat-option *ngFor="let author of authors" [value]="author">
+                  {{author.firstName}} {{ author.lastName }}</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </p>
+      <hr>
+      <h2>Title</h2>
+      <p>
+          <mat-form-field class="title-label" appearance="legacy">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Some title" #title>
+            <mat-icon matSuffix>border_color</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+      </p>
+      <hr>
+      <h2>Quantity</h2>
+      <p>
+          <mat-form-field class="title-label" appearance="legacy">
+            <mat-label>Quantity</mat-label>
+            <input matInput type="number" min="1" placeholder="f.e 5" #quantity>
+            <mat-icon matSuffix>plus_one</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+      </p>
+      <hr>
+      <h2>Book cover</h2>
+      <input type="file" (change)="onFileChanged($event)" enctype='multipart/form-data' placeholder="photo.jpg">
+    </div>
+    <div class=col>
+      <hr>
+      <h2>Type</h2>
+      <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Choose type</mat-label>
+            <mat-select [(value)]="selectedType">
+              <mat-option *ngFor="let type of types" [value]="type">
+                {{type.type}} </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </p>
+      <hr>
+      <h2>Publication date</h2>
+      <p>
+        <mat-form-field  appearance="fill">
+            <mat-label>Publication date</mat-label>
+            <input matInput [matDatepicker]="picker" #date>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>
+      <hr>
+      <h2>Description</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea rows="10" matInput #description></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  
+
+</div>
+
+<div class="row">
+  <button mat-raised-button (click)="add(selectedAuthor, selectedType, title.value, date.value, quantity.value, description.value)">ADD</button>
+  <mat-spinner  *ngIf="loading == true" [diameter]="50"></mat-spinner>
+  
+  
+</div>
+
+<div class="errors">
+  <ul>
+    <!-- <li *ngFor="let error of errors">
+      <p>{{ error.messages }}</p>
+    </li> -->
+  </ul>
+</div>

@@ -1,0 +1,50 @@
+h1 {
+    color: brown;
+}
+
+h2 {
+    color: brown;
+}
+
+.mat-raised-button {
+    color: brown;
+}
+
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: brown !important;
+} 
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: brown !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: brown !important;;
+}
+
+input {
+    caret-color: black;
+}
+
+::ng-deep .mat-dialog-container .mat-icon { 
+    color: brown;
+}
+
+.title-label {
+    margin-top: 13px;
+}
+
+.mat-form-field {
+    width: 250px;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: brown;
+}
+
+.mat-spinner {
+    margin-left: 25px;
+}

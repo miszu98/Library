@@ -1,0 +1,27 @@
+
+.navbar {
+    justify-content: left;
+}
+
+span {
+    padding-right: 1em;
+}
+
+.mat-toolbar {
+    background: rgb(0, 0, 0, 0.6);
+    color: #fff
+ }
+
+ a {
+    color: white;
+    text-decoration-line: none;
+ }
+
+ .active {
+    color: brown;
+  }
+
+  a:hover {
+    color: brown;
+  }
+ 

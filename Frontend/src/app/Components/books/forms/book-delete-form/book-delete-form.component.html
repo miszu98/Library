@@ -1,0 +1,13 @@
+
+<h1>Delete Book</h1>
+<p>
+    <mat-form-field appearance="fill">
+        <mat-label>Select book</mat-label>
+        <mat-select [(value)]="selectedBook">
+          <mat-option *ngFor="let book of books" [value]="book">
+            {{book.title}} / {{ book.bookType.type }} / {{ book.author.firstName }} {{ book.author.lastName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</p>
+<button mat-raised-button (click)="deleteBook(selectedBook?.id)">DELETE</button>
+

@@ -1,0 +1,14 @@
+
+<h1>Delete Author</h1>
+<p>
+    <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select [(value)]="selectedAuthor">
+          <mat-option *ngFor="let author of authors" [value]="author">
+            {{author.firstName}} {{ author.lastName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</p>
+
+<button mat-raised-button (click)="deleteAuthor(selectedAuthor.id)">DELETE</button>
+
