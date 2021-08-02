@@ -10,24 +10,24 @@
     </div>
 
     <div class="row">
-            <mat-card *ngFor="let book of books" class="example-card">
+            <mat-card  *ngFor="let book of books" class="example-card">
                 <mat-card-header>
                     <mat-card-title>{{ book.title }}</mat-card-title>
                     <mat-card-subtitle>{{ book.author.firstName }} {{ book.author.lastName }}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
                     <p>
-                    {{ book.description }}
+                      {{ sliceDescription(book.description) }}
                     </p>
                     <img mat-card-image src="{{ book.imageUrl }}" alt="Here should be book cover :/">
 
                 </mat-card-content>
-          
+
                 <mat-card-actions>
-                    <button mat-button>More</button>
-                    
+                    <button mat-button (click)="openLongDescriptionDialog(book)">More</button>
+
                 </mat-card-actions>
             </mat-card>
     </div>
-    
+
 </div>
