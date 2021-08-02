@@ -37,6 +37,7 @@ import { MainComponent } from './Components/main/main.component';
 import { authInterceptorsProviders } from './Interceptors/AuhtInterceptor/auth.interceptor';
 import { RegisterComponent } from './Components/register/register/register.component';
 import { UserAddFormComponent } from './Components/for-workers/forms/user-add-form/user-add-form/user-add-form.component';
+import { BookDescComponent } from './Components/books/forms/bookDescription/book-desc/book-desc.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { UserAddFormComponent } from './Components/for-workers/forms/user-add-fo
     ForWorkersComponent,
     MainComponent,
     RegisterComponent,
-    UserAddFormComponent
+    UserAddFormComponent,
+    BookDescComponent
   ],
   imports: [
     BrowserModule,

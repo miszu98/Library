@@ -26,3 +26,11 @@ h1 {
     margin-top: 50px;
     margin-left: 50px;
 }
+
+.mat-card-actions a {
+  color: brown;
+}
+
+.mat-card-header {
+  margin-left: -10%;
+}

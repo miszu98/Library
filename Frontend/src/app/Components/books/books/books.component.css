@@ -41,3 +41,7 @@ h1 {
 .mat-card-header {
     margin-left: -5%;
 }
+
+.mat-card-actions button {
+  color: brown;
+}

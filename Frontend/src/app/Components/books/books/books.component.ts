@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ShareDataService } from 'src/app/Services/ShareDataService/share-data.service';
 import { TokenStorageService } from 'src/app/Services/TokenStorageService/token-storage.service';
 import { LoginComponent } from '../../login/login.component';
+import {BookDescComponent} from "../forms/bookDescription/book-desc/book-desc.component";
 
 @Component({
   selector: 'app-books',
@@ -35,7 +36,11 @@ export class BooksComponent implements OnInit {
     } else {
       this.getBooksByAuthor(this.firstName, this.lastName);
     }
-    
+  }
+
+  public sliceDescription(description: string): string {
+    let arr = description.split(" ");
+    return arr.slice(0, 10).join(" ") + "...";
   }
 
   public isLogged() {
@@ -50,7 +55,7 @@ export class BooksComponent implements OnInit {
     this.bookService.getBooksByAuthor(firstName, lastName).subscribe(
       values => {
         this.books = values;
-      }, 
+      },
       error => {
         console.log(error);
       }
@@ -71,12 +76,12 @@ export class BooksComponent implements OnInit {
       this.bookService.add(book).subscribe(
         value => {
           console.log("dodalo ksiazke");
-        }, 
+        },
         error => {
           console.log("nie dodalo ksiazki - blad");
         }
       )
-   
+
   }
 
   public delete(id: number) {
@@ -113,7 +118,7 @@ export class BooksComponent implements OnInit {
         height: "750px"
       });
     }
-   
+
   }
 
   public openDeleteBookForm() {
@@ -134,7 +139,14 @@ export class BooksComponent implements OnInit {
         height: "900px"
       });
     }
+  }
 
+  public openLongDescriptionDialog(book: Book) {
+    const dialogRef = this.dialog.open(BookDescComponent, {
+        data: {
+          selectedBook: book
+        }
+    });
   }
 
 
