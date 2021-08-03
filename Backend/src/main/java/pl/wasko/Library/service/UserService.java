@@ -14,7 +14,7 @@ import pl.wasko.Library.Exceptions.UserNotFound;
 import java.util.List;
 
 public interface UserService {
-    User add(User user, long roleId, BindingResult result) throws RoleNotFound, RegistrationError;
+    User add(User user, BindingResult result) throws RoleNotFound, RegistrationError;
     List<User> getAll();
     List<ErrorImpl> extractErrors(List<ObjectError> errors);
     void deleteById(long id);

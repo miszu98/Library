@@ -23,6 +23,5 @@ public class DataConfig {
         bookTypeRepository.save(new BookTypeEntity("LYRIC"));
         bookTypeRepository.save(new BookTypeEntity("EPIC"));
 
-
     }
 }

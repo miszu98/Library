@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import pl.wasko.Library.DTO.Role;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -39,10 +40,12 @@ public class UserEntity {
     public UserEntity(String email,
                       String password,
                       String firstName,
-                      String lastName) {
+                      String lastName,
+                      RoleEntity roleEntity) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.roleEntity = roleEntity;
     }
 }

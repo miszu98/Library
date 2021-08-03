@@ -1,18 +1,29 @@
 package pl.wasko.Library.Mapper;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+import pl.wasko.Library.DTO.Role;
 import pl.wasko.Library.DTO.User;
 import pl.wasko.Library.Entities.UserEntity;
+import pl.wasko.Library.Exceptions.RoleNotFound;
+import pl.wasko.Library.service.RoleService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
+@AllArgsConstructor
 public class UserMapper {
-    public static UserEntity dtoToEntity(User user) {
+
+    private RoleService roleService;
+
+    public UserEntity dtoToEntity(User user) throws RoleNotFound {
         return new UserEntity(
                 user.getEmail(),
                 user.getPassword(),
                 user.getFirstName(),
-                user.getLastName()
+                user.getLastName(),
+                roleService.findRoleById(user.getRole().getId())
         );
     }
 
@@ -22,7 +33,9 @@ public class UserMapper {
                 userEntity.getEmail(),
                 userEntity.getPassword(),
                 userEntity.getFirstName(),
-                userEntity.getLastName()
+                userEntity.getLastName(),
+                RoleMapper.entityToDto(userEntity.getRoleEntity()),
+                userEntity.getDateJoined()
         );
     }
 
@@ -32,11 +45,10 @@ public class UserMapper {
                 userEntity.getEmail(),
                 "password",
                 userEntity.getFirstName(),
-                userEntity.getLastName()
+                userEntity.getLastName(),
+                new Role(userEntity.getRoleEntity().getId(), userEntity.getRoleEntity().getRoleName()),
+                userEntity.getDateJoined()
         )).collect(Collectors.toList());
     }
 
-    private UserMapper() {
-
-    }
 }

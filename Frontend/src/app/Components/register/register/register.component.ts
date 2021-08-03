@@ -44,7 +44,10 @@ export class RegisterComponent implements OnInit {
       password: registerForm.get('password1')?.value,
       firstName: registerForm.get('firstName')?.value,
       lastName: registerForm.get('lastName')?.value,
-      role: null
+      role: {
+        id: 1,
+        roleName: ""
+      }
     }).subscribe(
       value => {
         window.location.reload();
@@ -55,7 +58,5 @@ export class RegisterComponent implements OnInit {
       }
     )
   }
-
-
 
 }

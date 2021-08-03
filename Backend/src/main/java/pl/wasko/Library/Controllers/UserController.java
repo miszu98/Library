@@ -1,5 +1,6 @@
 package pl.wasko.Library.Controllers;
 
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -16,19 +17,16 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
+@AllArgsConstructor
 @RequestMapping("/users")
 public class UserController {
 
 
     private UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
     @PostMapping("/register")
     public ResponseEntity<User> register(@Valid @RequestBody User user, BindingResult result) throws RegistrationError, RoleNotFound {
-        return ResponseEntity.status(HttpStatus.OK).body(userService.add(user, 2, result));
+        return ResponseEntity.status(HttpStatus.OK).body(userService.add(user, result));
     }
 
     @PostMapping("/login")

@@ -36,17 +36,16 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
-    private RoleService roleService;
     private PasswordEncoder passwordEncoder;
     private AuthenticationManager authenticationManager;
+    private UserMapper userMapper;
+    private RoleService roleService;
 
 
-    public User add(User user, long roleId, BindingResult result) throws RoleNotFound, RegistrationError {
+    public User add(User user, BindingResult result) throws RoleNotFound, RegistrationError {
         checkErrors(result);
-        RoleEntity userRole = roleService.findRoleById(roleId);
-        UserEntity userEntity = UserMapper.dtoToEntity(user);
+        UserEntity userEntity = userMapper.dtoToEntity(user);
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
-        userEntity.setRoleEntity(userRole);
         return UserMapper.entityToDto(userRepository.save(userEntity));
     }
 
