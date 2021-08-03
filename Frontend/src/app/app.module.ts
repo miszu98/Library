@@ -24,6 +24,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -39,6 +41,7 @@ import { RegisterComponent } from './Components/register/register/register.compo
 import { UserAddFormComponent } from './Components/for-workers/forms/user-add-form/user-add-form/user-add-form.component';
 import { BookDescComponent } from './Components/books/forms/bookDescription/book-desc/book-desc.component';
 import { UserDeleteFormComponent } from './Components/for-workers/forms/user-delete-form/user-delete-form.component';
+import { UserDisplayFormComponent } from './Components/for-workers/forms/userDisplayForm/user-display-form/user-display-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +59,8 @@ import { UserDeleteFormComponent } from './Components/for-workers/forms/user-del
     RegisterComponent,
     UserAddFormComponent,
     BookDescComponent,
-    UserDeleteFormComponent
+    UserDeleteFormComponent,
+    UserDisplayFormComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +83,9 @@ import { UserDeleteFormComponent } from './Components/for-workers/forms/user-del
     MatToolbarModule,
     MatTabsModule,
     MatProgressSpinnerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule
 
     
 
