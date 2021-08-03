@@ -39,6 +39,7 @@ import { RegisterComponent } from './Components/register/register/register.compo
 import { UserAddFormComponent } from './Components/for-workers/forms/user-add-form/user-add-form/user-add-form.component';
 import { BookDescComponent } from './Components/books/forms/bookDescription/book-desc/book-desc.component';
 import { UserDeleteFormComponent } from './Components/for-workers/forms/user-delete-form/user-delete-form.component';
+import { UserDisplayFormComponent } from './Components/for-workers/forms/userDisplayForm/user-display-form/user-display-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { UserDeleteFormComponent } from './Components/for-workers/forms/user-del
     RegisterComponent,
     UserAddFormComponent,
     BookDescComponent,
-    UserDeleteFormComponent
+    UserDeleteFormComponent,
+    UserDisplayFormComponent
   ],
   imports: [
     BrowserModule,
