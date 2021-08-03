@@ -6,11 +6,6 @@ import { TokenStorageService } from '../TokenStorageService/token-storage.servic
 })
 export class ShareDataService {
 
-  private isLoggedIn: boolean = false;
-  private isLoginFailed: boolean = false;
-  private role: string = '';
-  private errorMessage: string = '';
-
   constructor() { }
 
 
@@ -46,5 +41,5 @@ export class ShareDataService {
     return window.localStorage.getItem("errorMessage");
   }
 
-  
+
 }

@@ -38,6 +38,11 @@ export class BooksComponent implements OnInit {
     }
   }
 
+  public reserveBook(book: Book) {
+    console.log(book);
+    console.log(this.tokenStorageService.getUser());
+  }
+
   public sliceDescription(description: string): string {
     let arr = description.split(" ");
     return arr.slice(0, 10).join(" ") + "...";

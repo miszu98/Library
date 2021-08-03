@@ -26,7 +26,9 @@ export class ForWorkersComponent implements OnInit {
   }
 
   public openDisplayUsersForm() {
-    const dialogRef = this.dialog.open(UserDisplayFormComponent);
+    const dialogRef = this.dialog.open(UserDisplayFormComponent, {
+      width: '50%'
+    });
   }
 
 

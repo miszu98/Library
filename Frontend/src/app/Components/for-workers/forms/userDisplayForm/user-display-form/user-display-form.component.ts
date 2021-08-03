@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/Models/models';
 import { UserService } from 'src/app/Services/UserService/user.service';
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-user-display-form',
@@ -11,11 +12,13 @@ import { UserService } from 'src/app/Services/UserService/user.service';
 export class UserDisplayFormComponent implements OnInit {
 
   declare users: Array<User>;
+  displayedColumns: string[] = ['email', 'firstName', 'lastName', 'dateJoined', 'role'];
   constructor(private userService: UserService) { }
+
+
 
   ngOnInit(): void {
     this.getAll();
-    console.log(this.users);
   }
 
   public getAll() {
@@ -23,7 +26,7 @@ export class UserDisplayFormComponent implements OnInit {
       value => {
         console.log(value);
         this.users = value;
-      }, 
+      },
       error => {
         console.log("BLAD PRZY POBIERANIU UZYTKOWNIKÓW Z BAZY");
       }

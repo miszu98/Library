@@ -9,6 +9,8 @@ import pl.wasko.Library.Mapper.RoleMapper;
 import pl.wasko.Library.Repositories.RoleRepository;
 import pl.wasko.Library.service.RoleService;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class RoleServiceImpl implements RoleService {
@@ -17,8 +19,8 @@ public class RoleServiceImpl implements RoleService {
 
 
     @Override
-    public void add(Role role) {
-        roleRepository.save(RoleMapper.dtoToEntity(role));
+    public Role add(Role role) {
+        return RoleMapper.entityToDto(roleRepository.save(RoleMapper.dtoToEntity(role)));
     }
 
     @Override
@@ -28,5 +30,10 @@ public class RoleServiceImpl implements RoleService {
                         "Role with id: " + id + " not found"
                 )
         );
+    }
+
+    @Override
+    public List<Role> getAll() {
+        return RoleMapper.entitiesToDto(roleRepository.findAll());
     }
 }

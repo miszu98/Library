@@ -42,5 +42,21 @@ export interface User {
     password: string,
     firstName: string,
     lastName: string,
-    role: string | null
+    role: Role
+}
+
+
+export interface Role {
+  id: number;
+  roleName: string;
+}
+
+export interface UserDetails {
+  id: number;
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  role: Role;
+  dateJoined: string;
 }

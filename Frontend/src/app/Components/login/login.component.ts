@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
 
   hide: boolean = true;
   isLoggedIn: boolean = false;
-  isLoginFailed: boolean = false;
   errorMessage = '';
   declare role: string;
 
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
   public onSubmit() {
     let email = this.loginForm.get('email')?.value;
     let password = this.loginForm.get('password')?.value;
-    
+
     this.authService.login({email: email, password: password}).subscribe(
       value => {
         this.tokenStorage.saveToken(value.token);
@@ -65,8 +64,5 @@ export class LoginComponent implements OnInit {
     )
   }
 
-  public reloadPage() {
-    window.location.reload();
-  }
 
 }

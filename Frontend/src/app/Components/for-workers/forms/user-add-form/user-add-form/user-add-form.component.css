@@ -5,7 +5,7 @@ h1, h2 {
 ::ng-deep.mat-form-field-underline {
     /*change color of underline*/
     background-color: brown !important;
-} 
+}
 
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
@@ -17,7 +17,7 @@ h1, h2 {
     background-color: brown !important;;
 }
 
-::ng-deep .mat-dialog-container .mat-icon { 
+::ng-deep .mat-dialog-container .mat-icon {
     color: brown;
 }
 
@@ -29,3 +29,8 @@ h1, h2 {
 .mat-raised-button {
     color: brown;
 }
+
+.role-field {
+  width: 100%;
+}
+
