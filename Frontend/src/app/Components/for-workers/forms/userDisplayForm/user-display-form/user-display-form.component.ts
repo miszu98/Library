@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/Models/models';
 import { UserService } from 'src/app/Services/UserService/user.service';
 
@@ -14,11 +15,13 @@ export class UserDisplayFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
+    console.log(this.users);
   }
 
   public getAll() {
     this.userService.getAll().subscribe(
       value => {
+        console.log(value);
         this.users = value;
       }, 
       error => {
