@@ -11,13 +11,7 @@ import java.util.Arrays;
 
 @Service
 public class ImageUploaderServiceImpl {
-    private final Cloudinary cloudinary = new Cloudinary(
-            ObjectUtils.asMap(
-                    "cloud_name", "miszu",
-                    "api_key", "218543362259791",
-                    "api_secret", "c_nHz6jY4REIeZha9yeE415I2QQ",
-                    "secure", true)
-    );
+   
 
     public String uploadImage(MultipartFile file) throws IOException {
 
